@@ -6,33 +6,33 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/AbstractList.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/AbstractList.hpp
 cstdlib
 -
 
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/LinkedList.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/LinkedList.hpp
 utility
 -
 AbstractList.hpp
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/AbstractList.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/AbstractList.hpp
 Node.hpp
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/Node.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/Node.hpp
 LinkedList.txx
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/LinkedList.txx
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/LinkedList.txx
 
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/LinkedList.txx
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/LinkedList.txx
 LinkedList.hpp
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/LinkedList.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/LinkedList.hpp
 
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/Node.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/Node.hpp
 Node.txx
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/Node.txx
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/Node.txx
 
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/Node.txx
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/Node.txx
 Node.hpp
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/Node.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/Node.hpp
 
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/catch.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/catch.hpp
 TargetConditionals.h
 -
 cstddef
@@ -414,7 +414,7 @@ string
 memory
 -
 Foundation/Foundation.h
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/Foundation/Foundation.h
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/Foundation/Foundation.h
 algorithm
 -
 signal.h
@@ -626,9 +626,9 @@ iomanip
 cassert
 -
 
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/student_tests.cpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/student_tests.cpp
 catch.hpp
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/catch.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/catch.hpp
 LinkedList.hpp
-C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/LinkedList.hpp
+C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/LinkedList.hpp
 

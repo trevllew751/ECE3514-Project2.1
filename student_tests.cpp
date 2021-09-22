@@ -109,3 +109,25 @@ TEST_CASE("Test setEntry(int, T)", "[LinkedList]") {
     REQUIRE(ll.setEntry(4, 1) == 4);
     REQUIRE(ll.getEntry(4) == 1);
 }
+
+TEST_CASE("Test swap(LinkedList, LinkedList)", "[LinkedList]") {
+    LinkedList<int> ll;
+    ll.insert(1, 1);
+    ll.insert(2, 2);
+    ll.insert(3, 3);
+    ll.insert(4, 4);
+    LinkedList<int> ll1;
+    ll1.insert(1, 5);
+    ll1.insert(2, 6);
+    ll1.insert(3, 7);
+    ll1.insert(4, 8);
+    ll.swap(ll, ll1);
+    REQUIRE(ll.getEntry(1) == 5);
+    REQUIRE(ll.getEntry(2) == 6);
+    REQUIRE(ll.getEntry(3) == 7);
+    REQUIRE(ll.getEntry(4) == 8);
+    REQUIRE(ll1.getEntry(1) == 1);
+    REQUIRE(ll1.getEntry(2) == 2);
+    REQUIRE(ll1.getEntry(3) == 3);
+    REQUIRE(ll1.getEntry(4) == 4);
+}

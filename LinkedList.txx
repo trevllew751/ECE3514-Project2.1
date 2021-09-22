@@ -25,7 +25,10 @@ LinkedList<T> &LinkedList<T>::operator=(LinkedList rhs) {
     if (this == &rhs) {
         return *this;
     }
-
+    LinkedList<T> temp(rhs);
+    swap(this, temp);
+    delete temp;
+    return *this;
 }
 
 template<class T>
@@ -156,13 +159,23 @@ T LinkedList<T>::setEntry(int position, const T &newValue) {
 
 template<class T>
 void LinkedList<T>::swap(LinkedList &lhs, LinkedList &rhs) {
-
+    int len = lhs.getLength() > rhs.getLength() ? rhs.getLength() : lhs.getLength();
+    Node<T> *lCurr = lhs.head;
+    Node<T> *rCurr = rhs.head;
+    while (lCurr != nullptr) {
+        Node<T> *temp = lCurr;
+        lCurr = rCurr;
+        rCurr = temp;
+        lCurr = lCurr->getNext();
+        rCurr = rCurr->getNext();
+    }
 }
 
 template<class T>
 Node<T> *LinkedList<T>::getNodeAt(int position) const {
     if (isValidIndex(position)) {
-        int currentPos = 0;
+        if (position == 1) { return head; }
+        int currentPos = 1;
         Node<T> *curr = head;
         while (curr != nullptr) {
             if (currentPos + 1 == position) {
