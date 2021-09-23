@@ -6,7 +6,7 @@ class Node {
 public:
     Node();
 
-    Node(Node<int> *anItem);
+    Node(const ItemType &anItem);
 
     Node(const ItemType &anItem, Node<ItemType> *nextNodePtr);
 

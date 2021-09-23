@@ -46,10 +46,10 @@ RM = C:\Users\Trevl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Trevl\Desktop\Projects\School\ECE 3514  - Data Structures and Algorithms\Project2.1\ECE3514-Project2.1"
+CMAKE_SOURCE_DIR = "C:\Users\Trevl\Desktop\Projects\School\ECE 3514 - Data Structures and Algorithms\Project2.1\P2.1-1_starter_"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Trevl\Desktop\Projects\School\ECE 3514  - Data Structures and Algorithms\Project2.1\ECE3514-Project2.1\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Trevl\Desktop\Projects\School\ECE 3514 - Data Structures and Algorithms\Project2.1\P2.1-1_starter_\cmake-build-debug"
 
 # Utility rule file for submission.
 
@@ -57,9 +57,9 @@ CMAKE_BINARY_DIR = "C:\Users\Trevl\Desktop\Projects\School\ECE 3514  - Data Stru
 include CMakeFiles\submission.dir\progress.make
 
 CMakeFiles\submission:
-	cd C:\Users\Trevl\Desktop\Projects\School\ECE351~1\Project2.1\ECE351~1.1
-	C:\Users\Trevl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe -E tar cfv "C:/Users/Trevl/Desktop/Projects/School/ECE 3514  - Data Structures and Algorithms/Project2.1/ECE3514-Project2.1/cmake-build-debug/submission.zip" --format=zip LinkedList.txx student_tests.cpp
-	cd C:\Users\Trevl\Desktop\Projects\School\ECE351~1\Project2.1\ECE351~1.1\CMAKE-~1
+	cd C:\Users\Trevl\Desktop\Projects\School\ECE351~1\Project2.1\P2EA37~1.1-1
+	C:\Users\Trevl\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\211.7442.42\bin\cmake\win\bin\cmake.exe -E tar cfv "C:/Users/Trevl/Desktop/Projects/School/ECE 3514 - Data Structures and Algorithms/Project2.1/P2.1-1_starter_/cmake-build-debug/submission.zip" --format=zip LinkedList.txx student_tests.cpp
+	cd C:\Users\Trevl\Desktop\Projects\School\ECE351~1\Project2.1\P2EA37~1.1-1\CMAKE-~1
 
 submission: CMakeFiles\submission
 submission: CMakeFiles\submission.dir\build.make
@@ -76,6 +76,6 @@ CMakeFiles\submission.dir\clean:
 .PHONY : CMakeFiles\submission.dir\clean
 
 CMakeFiles\submission.dir\depend:
-	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514  - Data Structures and Algorithms\Project2.1\ECE3514-Project2.1" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514  - Data Structures and Algorithms\Project2.1\ECE3514-Project2.1" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514  - Data Structures and Algorithms\Project2.1\ECE3514-Project2.1\cmake-build-debug" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514  - Data Structures and Algorithms\Project2.1\ECE3514-Project2.1\cmake-build-debug" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514  - Data Structures and Algorithms\Project2.1\ECE3514-Project2.1\cmake-build-debug\CMakeFiles\submission.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "NMake Makefiles" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514 - Data Structures and Algorithms\Project2.1\P2.1-1_starter_" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514 - Data Structures and Algorithms\Project2.1\P2.1-1_starter_" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514 - Data Structures and Algorithms\Project2.1\P2.1-1_starter_\cmake-build-debug" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514 - Data Structures and Algorithms\Project2.1\P2.1-1_starter_\cmake-build-debug" "C:\Users\Trevl\Desktop\Projects\School\ECE 3514 - Data Structures and Algorithms\Project2.1\P2.1-1_starter_\cmake-build-debug\CMakeFiles\submission.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles\submission.dir\depend
 

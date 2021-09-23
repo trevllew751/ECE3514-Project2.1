@@ -85,6 +85,7 @@ TEST_CASE("Test remove(int)", "[LinkedList]") {
 
 TEST_CASE("Test clear()", "[LinkedList]") {
     LinkedList<int> ll;
+    ll.clear();
     ll.insert(1, 1);
     ll.insert(2, 2);
     ll.insert(3, 3);
@@ -130,4 +131,44 @@ TEST_CASE("Test swap(LinkedList, LinkedList)", "[LinkedList]") {
     REQUIRE(ll1.getEntry(2) == 2);
     REQUIRE(ll1.getEntry(3) == 3);
     REQUIRE(ll1.getEntry(4) == 4);
+}
+
+TEST_CASE("Test copy constructor", "[LinkedList]") {
+    LinkedList<int> ll;
+    ll.insert(1, 1);
+    ll.insert(2, 2);
+    ll.insert(3, 3);
+    ll.insert(4, 4);
+    LinkedList<int> ll1(ll);
+    REQUIRE(ll1.getEntry(1) == 1);
+    REQUIRE(ll1.getEntry(2) == 2);
+    REQUIRE(ll1.getEntry(3) == 3);
+    REQUIRE(ll1.getEntry(4) == 4);
+}
+
+TEST_CASE("Test operator=", "[LinkedList]") {
+    LinkedList<int> ll;
+    ll.insert(1, 1);
+    ll.insert(2, 2);
+    ll.insert(3, 3);
+    ll.insert(4, 4);
+    LinkedList<int> ll1 = ll;
+    REQUIRE(ll1.getEntry(1) == 1);
+    REQUIRE(ll1.getEntry(2) == 2);
+    REQUIRE(ll1.getEntry(3) == 3);
+    REQUIRE(ll1.getEntry(4) == 4);
+    LinkedList<int> ll2;
+    ll2.insert(1, 1);
+    ll2.insert(2, 2);
+    ll2.insert(3, 3);
+    ll2.insert(4, 4);
+    ll2.insert(5, 5);
+    ll2.insert(6, 6);
+    ll1 = ll2;
+    REQUIRE(ll1.getEntry(1) == 1);
+    REQUIRE(ll1.getEntry(2) == 2);
+    REQUIRE(ll1.getEntry(3) == 3);
+    REQUIRE(ll1.getEntry(4) == 4);
+    REQUIRE(ll1.getEntry(5) == 5);
+    REQUIRE(ll1.getEntry(6) == 6);
 }

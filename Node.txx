@@ -4,7 +4,7 @@ template<typename ItemType>
 Node<ItemType>::Node() : next(nullptr) {} // end default constructor
 
 template<typename ItemType>
-Node<ItemType>::Node(Node<int> *anItem) : item(anItem), next(nullptr) {} // end constructor
+Node<ItemType>::Node(const ItemType &anItem) : item(anItem), next(nullptr) {} // end constructor
 
 template<typename ItemType>
 Node<ItemType>::Node(const ItemType &anItem, Node<ItemType> *nextNodePtr) : item(anItem),

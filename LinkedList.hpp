@@ -102,7 +102,7 @@ private:
     */
     Node<T> *getNodeAt(int position) const;
 
-    bool isValidIndex(int index) const;
+//    bool isValidIndex(int index) const;
 
 }; // end LinkedList
 

@@ -1,59 +1,61 @@
 #include "LinkedList.hpp"
+#include <stdexcept>
 
-template<class T>
+template<typename T>
 LinkedList<T>::LinkedList() : head(nullptr), count(0) {}
 
-template<class T>
+template<typename T>
 LinkedList<T>::LinkedList(const LinkedList<T> &rhs) {
     if (rhs.head == nullptr) {
         head = nullptr;
         count = 0;
     } else {
-        head = new Node<T>(rhs.head->getItem());
+        head = new Node<T>(rhs.head->getItem(), rhs.head->getNext());
+        count = 1;
         Node<T> *curr = head;
-        Node<T> *obj = rhs.head;
-        while (obj != nullptr) {
-            curr->setNext(new Node<T>(obj->getNext()->getItem(), obj->getNext()->getNext()));
+        Node<T> *next = rhs.head->getNext();
+        while (next != nullptr) {
+            curr->setNext(new Node<T>(next->getItem(), next->getNext()));
+            count++;
             curr = curr->getNext();
-            obj = obj->getNext();
+            next = next->getNext();
         }
     }
 }
 
-template<class T>
+template<typename T>
 LinkedList<T> &LinkedList<T>::operator=(LinkedList rhs) {
-    if (this == &rhs) {
-        return *this;
+    if (this != &rhs) {
+        LinkedList<T> temp(rhs);
+        swap(*this, rhs);
+        count = rhs.count;
     }
-    LinkedList<T> temp(rhs);
-    swap(this, temp);
-    delete temp;
     return *this;
 }
 
-template<class T>
+template<typename T>
 LinkedList<T>::~LinkedList() {
     Node<T> *curr = head;
     while (curr != nullptr) {
-        Node<T> *temp = curr;
-        curr = curr->getNext();
-        delete temp;
+        head = head->getNext();
+        delete curr;
+        curr = head;
     }
 }
 
-template<class T>
+template<typename T>
 bool LinkedList<T>::isEmpty() const {
     return count == 0;
 }
 
-template<class T>
+template<typename T>
 int LinkedList<T>::getLength() const {
     return count;
 }
 
-template<class T>
+template<typename T>
 bool LinkedList<T>::insert(int newPosition, const T &newEntry) {
-    if (isValidIndex(newPosition)) {
+    if ((newPosition >= 1) && (newPosition <= this->getLength() + 1)) {
         if (newPosition == 1) {
             Node<T> *temp = head;
             head = new Node<T>(newEntry, temp);
@@ -76,10 +78,10 @@ bool LinkedList<T>::insert(int newPosition, const T &newEntry) {
     return false;
 }
 
-template<class T>
+template<typename T>
 bool LinkedList<T>::remove(int position) {
     if (isEmpty()) { return false; }
-    if (isValidIndex(position)) {
+    if ((position >= 1) && (position <= this->getLength() + 1)) {
         if (position == 1) {
             Node<T> *temp = head;
             head = head->getNext();
@@ -104,7 +106,7 @@ bool LinkedList<T>::remove(int position) {
     return false;
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::clear() {
     Node<T> *curr = head;
     while (curr != nullptr) {
@@ -116,9 +118,9 @@ void LinkedList<T>::clear() {
     count = 0;
 }
 
-template<class T>
+template<typename T>
 T LinkedList<T>::getEntry(int position) const {
-    if (isValidIndex(position)) {
+    if ((position >= 1) && (position <= this->getLength() + 1)) {
         if (position == 1) { return head->getItem(); }
         int currentPos = 1;
         Node<T> *curr = head;
@@ -131,12 +133,12 @@ T LinkedList<T>::getEntry(int position) const {
             curr = curr->getNext();
         }
     }
-    throw std::out_of_range("Index out of bounds.");
+    throw std::logic_error("Index out of bounds.");
 }
 
-template<class T>
+template<typename T>
 T LinkedList<T>::setEntry(int position, const T &newValue) {
-    if (isValidIndex(position)) {
+    if ((position >= 1) && (position <= this->getLength() + 1)) {
         if (position == 1) {
             T temp = head->getItem();
             head->setItem(newValue);
@@ -154,26 +156,19 @@ T LinkedList<T>::setEntry(int position, const T &newValue) {
             curr = curr->getNext();
         }
     }
-    throw std::out_of_range("Index out of bounds.");
+    throw std::logic_error("Index out of bounds.");
 }
 
-template<class T>
+template<typename T>
 void LinkedList<T>::swap(LinkedList &lhs, LinkedList &rhs) {
-    int len = lhs.getLength() > rhs.getLength() ? rhs.getLength() : lhs.getLength();
-    Node<T> *lCurr = lhs.head;
-    Node<T> *rCurr = rhs.head;
-    while (lCurr != nullptr) {
-        Node<T> *temp = lCurr;
-        lCurr = rCurr;
-        rCurr = temp;
-        lCurr = lCurr->getNext();
-        rCurr = rCurr->getNext();
-    }
+    Node<T> *temp = lhs.head;
+    lhs.head = rhs.head;
+    rhs.head = temp;
 }
 
-template<class T>
+template<typename T>
 Node<T> *LinkedList<T>::getNodeAt(int position) const {
-    if (isValidIndex(position)) {
+    if ((position >= 1) && (position <= this->getLength() + 1)) {
         if (position == 1) { return head; }
         int currentPos = 1;
         Node<T> *curr = head;
@@ -185,10 +180,10 @@ Node<T> *LinkedList<T>::getNodeAt(int position) const {
             curr = curr->getNext();
         }
     }
-    throw std::out_of_range("Index out of bounds.");
+    throw std::logic_error("Index out of bounds.");
 }
 
-template<class T>
-bool LinkedList<T>::isValidIndex(int index) const {
-    return ((index >= 1) && (index <= getLength() + 1));
-}
+//template<typename T>
+//bool LinkedList<T>::isValidIndex(int index) const {
+//    return ((index >= 1) && (index <= this->getLength() + 1));
+//}
