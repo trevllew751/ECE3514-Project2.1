@@ -55,55 +55,35 @@ int LinkedList<T>::getLength() const {
 
 template<typename T>
 bool LinkedList<T>::insert(int newPosition, const T &newEntry) {
-    if ((newPosition >= 1) && (newPosition <= this->getLength() + 1)) {
-        if (newPosition == 1) {
-            Node<T> *temp = head;
-            head = new Node<T>(newEntry, temp);
-            count++;
-            return true;
-        }
-        int currentPos = 1;
-        Node<T> *curr = head;
-        while (curr != nullptr) {
-            if (currentPos + 1 == newPosition) {
-                Node<T> *newNode = new Node<T>(newEntry, curr->getNext());
-                curr->setNext(newNode);
-                count++;
-                return true;
-            }
-            curr = curr->getNext();
-            currentPos++;
-        }
+    if (newPosition == 1) {
+        Node<T> *temp = head;
+        head = new Node<T>(newEntry, temp);
+    } else {
+        Node<T> *old = getNodeAt(newPosition);
+        if (old == nullptr) { return false; }
+        Node<T> *newNode = new Node<T>(newEntry, old->getNext());
+        old->setNext(newNode);
     }
-    return false;
+    count++;
+    return true;
 }
 
 template<typename T>
 bool LinkedList<T>::remove(int position) {
     if (isEmpty()) { return false; }
-    if ((position >= 1) && (position <= this->getLength() + 1)) {
-        if (position == 1) {
-            Node<T> *temp = head;
-            head = head->getNext();
-            count--;
-            delete temp;
-            return true;
-        }
-        int currentPos = 1;
-        Node<T> *curr = head;
-        while (curr != nullptr) {
-            if (currentPos + 1 == position) {
-                Node<T> *temp = curr->getNext();    // Get pointer to node that needs removal
-                curr->setNext(curr->getNext()->getNext());
-                delete temp;                        // Free up memory from removed node
-                count--;
-                return true;
-            }
-            curr = curr->getNext();
-            currentPos++;
-        }
+    Node<T> *remove;
+    if (position == 1) {
+        remove = head;
+        head = head->getNext();
+    } else {
+        Node<T> *old = getNodeAt(position);
+        if (old == nullptr) { return false; }
+        remove = old->getNext();
+        old->setNext(old->getNext()->getNext());
     }
-    return false;
+    delete remove;
+    count--;
+    return true;
 }
 
 template<typename T>
@@ -120,43 +100,30 @@ void LinkedList<T>::clear() {
 
 template<typename T>
 T LinkedList<T>::getEntry(int position) const {
-    if ((position >= 1) && (position <= this->getLength() + 1)) {
-        if (position == 1) { return head->getItem(); }
-        int currentPos = 1;
-        Node<T> *curr = head;
-        while (curr != nullptr) {
-            if (currentPos + 1 == position) {
-                T item = curr->getNext()->getItem();
-                return curr->getNext()->getItem();
-            }
-            currentPos++;
-            curr = curr->getNext();
-        }
+    T item;
+    if (position == 1) {
+        item = head->getItem();
+    } else {
+        Node<T> *node = getNodeAt(position);
+        if (node == nullptr) { throw std::logic_error("Index out of bounds."); }
+        item = node->getNext()->getItem();
     }
-    throw std::logic_error("Index out of bounds.");
+    return item;
 }
 
 template<typename T>
 T LinkedList<T>::setEntry(int position, const T &newValue) {
-    if ((position >= 1) && (position <= this->getLength() + 1)) {
-        if (position == 1) {
-            T temp = head->getItem();
-            head->setItem(newValue);
-            return temp;
-        }
-        int currentPos = 1;
-        Node<T> *curr = head;
-        while (curr != nullptr) {
-            if (currentPos + 1 == position) {
-                T temp = curr->getNext()->getItem();
-                curr->getNext()->setItem(newValue);
-                return temp;
-            }
-            currentPos++;
-            curr = curr->getNext();
-        }
+    T temp;
+    if (position == 1) {
+        temp = head->getItem();
+        head->setItem(newValue);
+    } else {
+        Node<T> *old = getNodeAt(position);
+        if (old == nullptr) { throw std::logic_error("Index out of bounds."); }
+        temp = old->getNext()->getItem();
+        old->getNext()->setItem(newValue);
     }
-    throw std::logic_error("Index out of bounds.");
+    return temp;
 }
 
 template<typename T>
@@ -174,16 +141,11 @@ Node<T> *LinkedList<T>::getNodeAt(int position) const {
         Node<T> *curr = head;
         while (curr != nullptr) {
             if (currentPos + 1 == position) {
-                return curr->getNext();
+                return curr;
             }
             currentPos++;
             curr = curr->getNext();
         }
     }
-    throw std::logic_error("Index out of bounds.");
+    return nullptr;
 }
-
-//template<typename T>
-//bool LinkedList<T>::isValidIndex(int index) const {
-//    return ((index >= 1) && (index <= this->getLength() + 1));
-//}
